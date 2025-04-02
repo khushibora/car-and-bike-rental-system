@@ -12,25 +12,35 @@
 <body>
     <header>
         <a href="#" class="logo"><img src="img/travel.jpg" alt=""></a>
-        <i class='bx bx-menu' ></i>
-
+        <i id="menu-icon" class="bx bx-menu"></i> <!-- ADDED ID for the menu icon -->
+        
         <ul class="navbar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#ride">Ride</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-    </ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ride">Ride</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact us">Contact Us</a></li>
+        </ul>
     <div class="header-btn">
+        <a href="#" class="Register">Register</a>
         <a href="#" class="sign-up">Sign Up</a>
         <a href="#" class="log-in">Log-In</a>
     </div>
     </header>
     <section class="home" id="home">
+        
+        <div class="welcome-text">
+            <span class="welcome">Welcome</span> <br>
+            <span class="to"> To</span><br>
+            <span class="site-name">JAJABOR</span>
+        </div>
+        
+        
         <div class="text">
             <h1><span>Looking</span> for <br>rent a car or bike</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis commodi nulla illum tempore quisquam veritatis quasi, ratione voluptate repellat ut. Rem dolorem, placeat sed vel aliquam libero dolores natus consequuntur.</p>
-            <div class="app-stores">
+            <p>Whether you need a car for business travel, a bike for city exploration, or a vehicle for a weekend getaway, JAJABOR offers a seamless and reliable rental experience. Choose from a wide range of well-maintained vehicles tailored to your needs.
+
                 <img src="img/ios.png" alt="">
                 <img src="img/512x512.png" alt="">
                 
@@ -38,9 +48,10 @@
         </div>
         <div class="form-container">
             <form action="">
+                <div class="input-box">
                 <span>Location</span>
                 <input type="search" name="" id="" placeholder="Search Places">
-        
+                </div>
                 <div class="input-box">
                     <span>Pick-Up Date</span>
                     <input type="date" name="" id="">
@@ -51,14 +62,15 @@
                     <input type="date" name="" id="">
                 </div>
         
-                <button type="submit" class="btn">Submit</button>
+                <input type="submit" value="Submit" class="btn">
 </form>
         
     </section>
+    <!--Ride Section-->
     <section class="ride" id="ride">
         <div class="heading">
             <span>How It Works</span>
-            <h1>Rent with 3 easy Steps</h1>
+            <h1>Rent with 3 Easy Steps</h1>
         </div>
         <div class="ride-container">
         <div class="box">
@@ -168,8 +180,9 @@
             </div>
             <div class="about-text">
                 <span>About Us</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat molestias reiciendis sunt ducimus adipisci quia, voluptas et tempora fuga laborum odio consequuntur consectetur quae autem atque ullam delectus eius quod.</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit distinctio odit voluptatibus. Laboriosam enim, sequi fugiat earum, eveniet reprehenderit maxime id excepturi ipsum iste minima facere, deserunt sapiente totam! Nesciunt.</p>
+                <p>Welcome to JAJABOR, your trusted destination for hassle-free car and bike rentals. Whether you need a stylish car for a weekend getaway or a fuel-efficient bike for your daily commute, we've got you covered. Our platform offers a seamless booking experience, competitive pricing, and a diverse range of vehicles to suit your needs.
+
+                    At JAJABOR, we prioritize customer satisfaction, ensuring all our vehicles are well-maintained, clean, and ready for the road. With flexible rental plans and a dedicated support team, we make your journey smooth and enjoyable. Choose us for a reliable, affordable, and convenient rental experience!</p>
                 <a href="#" class="btn">Learn More</a>
           </div>
         </div>
@@ -184,7 +197,7 @@
         <div class="rev-img">
             <img src="img/rev1.jpg" alt="">
         </div>
-        <h2>Shyaman</h2>
+        <h2>Sam</h2>
         <div class="stars">
             <i class='bx bxs-star'></i>
             <i class='bx bxs-star'></i>
@@ -192,7 +205,7 @@
             <i class='bx bxs-star'></i>
             <i class='bx bx-star' ></i>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam quam fugiat accusantium similique nisi aperiam eum. Enim quae nostrum sint, in odit doloremque illum, doloribus quidem aliquam molestiae aliquid.</p>
+        <p>"Had an amazing experience renting a bike for my weekend trip! The booking process was seamless, and the bike was in top-notch condition. Highly recommend!"</p>
     </div>
 
 
@@ -200,7 +213,7 @@
     <div class="rev-img">
         <img src="img/rev2.jpg" alt="">
     </div>
-    <h2>Shyaman</h2>
+    <h2>Edward</h2>
     <div class="stars">
         <i class='bx bxs-star'></i>
         <i class='bx bxs-star'></i>
@@ -208,13 +221,13 @@
         <i class='bx bxs-star'></i>
         <i class='bx bx-star' ></i>
     </div>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti blanditiis magni quis asperiores? Sed incidunt suscipit impedit facilis perspiciatis. Cumque temporibus consequuntur quasi placeat non dolore. Fuga quo repellendus exercitationem!</p>
+    <p>"Great service and well-maintained cars! The rental rates were reasonable, and the support team was very responsive. Only wish the pick-up process was a bit faster."</p>
 </div>
     <div class="box">
         <div class="rev-img">
             <img src="img/rev3.jpg" alt="">
         </div>
-        <h2>Shyaman</h2>
+        <h2>Suzen</h2>
         <div class="stars">
             <i class='bx bxs-star'></i>
             <i class='bx bxs-star'></i>
@@ -222,7 +235,7 @@
             <i class='bx bx-star' ></i>
             <i class='bx bx-star' ></i>
         </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum optio repellendus amet asperiores ea autem voluptatibus odit, libero ad reprehenderit modi alias eligendi, deleniti expedita distinctio. Repellendus, facere odit?</p>
+    <p>Rented a car for a family vacation, and it was a smooth ride throughout. Hassle-free pickup and return process. Will definitely rent again!"</p>
 </div>
     </section>
     <!--Newsletter-->
@@ -271,6 +284,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
     </script>
-    
+    <script src="https://unpkg.com/scrollreveal" ></script>
+   <script src="script.js"></script>
+
+
+
 </body>
 </html>

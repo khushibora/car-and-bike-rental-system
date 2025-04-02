@@ -1,16 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
+
     let menu = document.querySelector("#menu-icon");
     let navbar = document.querySelector(".navbar");
 
     menu.onclick = () => {
-        menu.classList.toggle("bx-x");
-        navbar.classList.toggle("active");
-    };
-
-    document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !navbar.contains(e.target)) {
-            menu.classList.remove("bx-x");
-            navbar.classList.remove("active");
-        }
+        menu.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    }
+    window.onscroll = () => {
+        menu.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    }
+    const sr = ScrollReveal ({
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+        reset: true,
+    })
+    sr.reveal('.text',{delay: 200, origin:'top'})
+    sr.reveal('.form-container form',{delay: 200, origin:'left'})
+    sr.reveal('.heading',{delay: 800, origin:'top'})
+    sr.reveal('.ride-container .box',{delay: 600, origin:'top'})
+    sr.reveal('.services-container .box',{delay: 600, origin:'top'})
+    sr.reveal('.about-container .box',{delay: 600, origin:'top'})
+    sr.reveal('.reviews-container .box',{delay: 600, origin:'top'})
+    sr.reveal('.newsletter .box',{delay: 400, origin:'bottom'})
+    sr.reveal('.welcome-text', { delay: 300, origin: 'left', distance: '150px', duration: 1200, easing: 'ease-in-out', reset: true });
+    //header-btn click funtion
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".header-btn a");
+    
+        buttons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                // Prevent default link behavior
+                event.preventDefault();
+    
+                // Remove 'active-btn' class from all buttons
+                buttons.forEach(btn => btn.classList.remove("active-btn"));
+    
+                // Add 'active-btn' class only to the clicked button
+                this.classList.add("active-btn");
+            });
+        });
     });
-});
+    
+    
+    
+    
+    
