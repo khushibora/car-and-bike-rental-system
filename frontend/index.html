@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><img src="img/travel.jpg" alt=""></a>
+        <a href="#" class="logo"><img src="img/car.gif" alt=""></a>
         <i id="menu-icon" class="bx bx-menu"></i> <!-- ADDED ID for the menu icon -->
         
         <ul class="navbar">
@@ -33,7 +33,8 @@
         <div class="welcome-text">
             <span class="welcome">Welcome</span> <br>
             <span class="to"> To</span><br>
-            <span class="site-name">JAJABOR</span>
+            <span class="site-name">JAJABOR</span><br>
+            <span class="description">"Where every journey begins with the perfect ride"</span>
         </div>
         
         
@@ -76,19 +77,19 @@
         <div class="box">
             <i class='bx bxs-map' ></i>
             <h2>Choose a location</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa commodi incidunt tempora sunt assumenda deleniti veritatis est cum sit molestias quia totam eos unde laboriosam labore quam, hic quaerat!</p>
+            <p>Select the city or area where you want to rent a vehicle. Browse through available options and pick the one that suits your needs.</p>
         </div>
         
         <div class="box">
             <i class='bx bxs-calendar' ></i>
             <h2>Pick-Up Date</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa commodi incidunt tempora sunt assumenda deleniti veritatis est cum sit molestias quia totam eos unde laboriosam labore quam, hic quaerat!</p>
+            <p>Choose your preferred rental start date and duration. Ensure availability and confirm your booking for a hassle-free experience.</p>
         </div>
         
         <div class="box">
             <i class='bx bxs-car' ></i>
             <h2>Book A Vehicle</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa commodi incidunt tempora sunt assumenda deleniti veritatis est cum sit molestias quia totam eos unde laboriosam labore quam, hic quaerat!</p>
+            <p>Complete your reservation by providing necessary details and making a payment. Get ready to hit the road with your chosen car or bike!</p>
         </div>
         </div>
     </section>
@@ -103,11 +104,32 @@
         <button onclick="showCategory('bike')" class="btn" id="bike-btn">Bike</button>
     </div>
     
+    <div class="search-filter-container">
+        <input type="text" id="search-bar" placeholder="Search vehicle..." onkeyup="searchVehicle()">
+        
+        <select id="type-filter" onchange="filterVehicles()">
+            <option value="all">All Types</option>
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+        </select>
+    
+        <select id="brand-filter" onchange="filterVehicles()">
+            <option value="all">All Brands</option>
+            <option value="Mahindra">Mahindra</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Royal Enfield">Royal Enfield</option>
+            <option value="Yamaha">Yamaha</option>
+        </select>
+    
+        <input type="range" id="price-filter" min="500" max="3000" step="100" value="3000" oninput="updatePrice()">
+        <span id="price-value">₹3000</span>
+    </div>
     
 
     <!-- Cars Section -->
     <div id="car-section">
     <div class="services-container">
+        
         <div class="box">
             <div class="box-img">
                 <img src="img/scorpioscorpiorightfrontthreequarter.jpeg" alt="Car Image" class="car-image">
@@ -115,7 +137,7 @@
             <p>2024</p>
             <h3>Mahindra Scorpio</h3>
             <h2>₹2000<span>/day</span></h2>
-            <a href="#" class="btn">Rent Now</a>
+            <a href="javascript:void(0);" class="btn rent-now">Rent Now</a>
         </div>
         
             <div class="box">
@@ -255,35 +277,19 @@
     <a href="#"><i class='bx bxl-instagram' ></i></a>
 </div>
     </div>
-    <script src="main.js"></script>
+    <div id="booking-form" class="popup">
+        <form>
+            <h2>Book Your Ride</h2>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+    <div id="overlay"></div>
+    <script src="script.js"></script>
     <!-- JavaScript -->
-    <script>
-       function showCategory(category) {
-    // Get elements
-    var carSection = document.getElementById("car-section");
-    var bikeSection = document.getElementById("bike-section");
-    var buttons = document.querySelectorAll(".toggle-buttons .btn");
-
-    // Toggle visibility
-    if (category === "car") {
-        carSection.style.display = "block";
-        bikeSection.style.display = "none";
-    } else {
-        carSection.style.display = "none";
-        bikeSection.style.display = "block";
-    }
-
-    // Update active button
-    buttons.forEach(button => button.classList.remove("active"));
-    document.querySelector(`.toggle-buttons .btn:nth-child(${category === 'car' ? 1 : 2})`).classList.add("active");
-}
-
-// Set default view to cars when page loads
-document.addEventListener("DOMContentLoaded", function() {
-    showCategory("car");
-});
-
-    </script>
+    
     <script src="https://unpkg.com/scrollreveal" ></script>
    <script src="script.js"></script>
 

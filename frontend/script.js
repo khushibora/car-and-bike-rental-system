@@ -43,7 +43,99 @@
         });
     });
     
+    function showCategory(category) {
+        var carSection = document.getElementById("car-section");
+        var bikeSection = document.getElementById("bike-section");
+        var carBtn = document.getElementById("car-btn");
+        var bikeBtn = document.getElementById("bike-btn");
+    
+        if (category === "car") {
+            carSection.style.display = "block";
+            bikeSection.style.display = "none";
+            carBtn.classList.add("active");
+            bikeBtn.classList.remove("active");
+        } else {
+            carSection.style.display = "none";
+            bikeSection.style.display = "block";
+            bikeBtn.classList.add("active");
+            carBtn.classList.remove("active");
+        }
+    }
+    
+    // Set default view to cars when page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        showCategory("car");
+    });
+    function searchVehicle() {
+        let input = document.getElementById("search-bar").value.toLowerCase();
+        let vehicles = document.querySelectorAll(".vehicle-box");
+    
+        vehicles.forEach(vehicle => {
+            let name = vehicle.getAttribute("data-name").toLowerCase();
+            vehicle.style.display = name.includes(input) ? "block" : "none";
+        });
+    }
+    
+    function filterVehicles() {
+        let typeFilter = document.getElementById("type-filter").value;
+        let brandFilter = document.getElementById("brand-filter").value;
+        let priceFilter = document.getElementById("price-filter").value;
+        let vehicles = document.querySelectorAll(".vehicle-box");
+    
+        vehicles.forEach(vehicle => {
+            let type = vehicle.getAttribute("data-type");
+            let brand = vehicle.getAttribute("data-brand");
+            let price = parseInt(vehicle.getAttribute("data-price"));
+    
+            if ((typeFilter === "all" || type === typeFilter) &&
+                (brandFilter === "all" || brand === brandFilter) &&
+                (price <= priceFilter)) {
+                vehicle.style.display = "block";
+            } else {
+                vehicle.style.display = "none";
+            }
+        });
+    }
+    
+    function updatePrice() {
+        let price = document.getElementById("price-filter").value;
+        document.getElementById("price-value").textContent = `₹${price}`;
+        filterVehicles();
+    }
+    
+    // Ensure filters apply on load
+    document.addEventListener("DOMContentLoaded", filterVehicles);
+    document.querySelectorAll(".btn").forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            document.getElementById("booking-form").style.display = "block";
+        });
+    });
     
     
     
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const rentButtons = document.querySelectorAll(".rent-now");
+        const bookingForm = document.getElementById("booking-form");
+    
+        // Create an overlay for better UI experience
+        const overlay = document.createElement("div");
+        overlay.id = "overlay";
+        document.body.appendChild(overlay);
+    
+        rentButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault(); // Stop the page from scrolling up
+                bookingForm.style.display = "block"; // Show form
+                overlay.style.display = "block"; // Show overlay
+            });
+        });
+    
+        // Close form when clicking outside
+        overlay.addEventListener("click", function () {
+            bookingForm.style.display = "none"; // Hide form
+            overlay.style.display = "none"; // Hide overlay
+        });
+    });
     
