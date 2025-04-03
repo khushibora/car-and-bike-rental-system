@@ -41,9 +41,10 @@
         <div class="text">
             <h1><span>Looking</span> for <br>rent a car or bike</h1>
             <p>Whether you need a car for business travel, a bike for city exploration, or a vehicle for a weekend getaway, JAJABOR offers a seamless and reliable rental experience. Choose from a wide range of well-maintained vehicles tailored to your needs.
+                <div class="app-images">
+                    <img src="img/ios.png" alt="">
+                    <img src="img/512x512.png" alt=""></div>
 
-                <img src="img/ios.png" alt="">
-                <img src="img/512x512.png" alt="">
                 
             </div>
         </div>
@@ -105,24 +106,30 @@
     </div>
     
     <div class="search-filter-container">
-        <input type="text" id="search-bar" placeholder="Search vehicle..." onkeyup="searchVehicle()">
+        <div class="filter-group">
+            <input type="text" id="search-bar" placeholder="Search vehicle..." onkeyup="searchVehicle()">
+        </div>
         
-        <select id="type-filter" onchange="filterVehicles()">
-            <option value="all">All Types</option>
-            <option value="car">Car</option>
-            <option value="bike">Bike</option>
-        </select>
-    
-        <select id="brand-filter" onchange="filterVehicles()">
-            <option value="all">All Brands</option>
-            <option value="Mahindra">Mahindra</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Royal Enfield">Royal Enfield</option>
-            <option value="Yamaha">Yamaha</option>
-        </select>
-    
-        <input type="range" id="price-filter" min="500" max="2000" step="100" value="2000" oninput="updatePrice()">
-        <span id="price-value">₹2000</span>
+        <div class="filter-group">
+            <select id="type-filter" onchange="filterVehicles()">
+                <option value="all">All Types</option>
+                <option value="car">Car</option>
+                <option value="bike">Bike</option>
+            </select>
+        
+            <select id="brand-filter" onchange="filterVehicles()">
+                <option value="all">All Brands</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Royal Enfield">Royal Enfield</option>
+                <option value="Yamaha">Yamaha</option>
+            </select>
+        </div>
+        
+        <div class="filter-group price-group">
+            <input type="range" id="price-filter" min="500" max="2000" step="100" value="2000" oninput="updatePrice()">
+            <span id="price-value">₹2000</span>
+        </div>
     </div>
     
 

@@ -78,12 +78,16 @@ let menu = document.querySelector("#menu-icon");
         showCategory("car");
     });
     function searchVehicle() {
-        let input = document.getElementById("search-bar").value.toLowerCase();
-        let vehicles = document.querySelectorAll(".vehicle-box");
+        const searchInput = document.getElementById('search-bar').value.toLowerCase();
+        const vehicles = document.querySelectorAll('.services-container .box');
     
         vehicles.forEach(vehicle => {
-            let name = vehicle.getAttribute("data-name").toLowerCase();
-            vehicle.style.display = name.includes(input) ? "block" : "none";
+            const vehicleName = vehicle.querySelector('h3').textContent.toLowerCase();
+            if (vehicleName.includes(searchInput)) {
+                vehicle.style.display = 'block';
+            } else {
+                vehicle.style.display = 'none';
+            }
         });
     }
     
